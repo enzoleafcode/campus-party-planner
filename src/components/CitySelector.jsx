@@ -4,9 +4,9 @@ import "../styles/components/city-selector.css";
 function CitySelector() {
   const { selectedCity, setCity, cities } = useEventContext();
 
-  function handleCityChange(city) {
-    setCity(city);
-  }
+function handleCityChange(event) {
+  setCity(event.target.value);
+}
 
   return (
     <div className="city-selector">
