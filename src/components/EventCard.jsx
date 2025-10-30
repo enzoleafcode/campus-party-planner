@@ -2,11 +2,12 @@ import { useEventContext } from "../context/EventContext";
 import "../styles/components/event-card.css";
 
 function EventCard({ event }) {
+ 
   const { likedEvents, toggleLike } = useEventContext();
 
   if (!event) return null;
 
-  const isLiked = likedEvents.includes(event.id);
+  const isLiked = likedEvents.includes (event.id);
 
   function formatDate(dateString) {
     const date = new Date(dateString);

@@ -4,8 +4,8 @@ import "../styles/components/city-selector.css";
 function CitySelector() {
   const { selectedCity, setCity, cities } = useEventContext();
 
-  function handleCityChange(event) {
-    setCity(event.target.value);
+  function handleCityChange(city) {
+    setCity(city);
   }
 
   return (
@@ -16,7 +16,7 @@ function CitySelector() {
       <select
         id="city-select"
         className="city-selector__select"
-        value={selectedCity}
+        value={selectedCity || ''}
         onChange={handleCityChange}
       >
         <option value="">Toutes les villes</option>
