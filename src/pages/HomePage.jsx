@@ -1,17 +1,19 @@
-// function HomePage() {
-//   return <h1> Hello !</h1>;
-// }
-// export default HomePage;
-
 import CitySelector from "../components/CitySelector";
-import EventCard from "../components/EventCard";
+import EventList from "../components/EventList";
+import { Link } from "react-router-dom";
 
-const Header = () => (
-  <header className="app-header">
+function HomePage() {
+  return (
+    <>
+    <header className="app-header">
     <h1>Campus Party Planner</h1>
     <CitySelector />
     <EventCard/>
-  </header>
-);
+    </header>
+    <Link to="/stats">Voir les stats</Link>
+    <EventList />
+    </>
+  );
+}
 
-export default Header;
+export default HomePage;
