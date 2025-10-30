@@ -58,6 +58,7 @@ const EventProvider = ({ children }) => {
 
   useEffect(() => {
     fetchCities().then((data) => setCities(data));
+    refreshEvents(selectedCity);
   }, []);
 
   return (
