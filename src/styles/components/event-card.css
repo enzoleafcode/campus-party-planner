@@ -1,0 +1,53 @@
+/* event-card.css */
+.event-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background-color: white;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.event-card__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-card__body {
+  padding: 1rem;
+}
+
+.event-card__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.event-card__info {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+.event-card__like-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.event-card__like-btn:hover {
+  transform: scale(1.2);
+}
+
+.event-card__like-btn--liked {
+  color: red;
+}
