@@ -1,0 +1,21 @@
+/* event-card.css */
+.city-selector {
+  margin: 1rem 0;
+}
+
+.city-selector__label {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.city-selector__select {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.city-selector__select:hover {
+  border-color: #2f8ea3;
+}
