@@ -55,6 +55,10 @@ const EventProvider = ({ children }) => {
     }
   }, [selectedCity]);
 
+  useEffect(() => {
+    refreshEvents(selectedCity);
+  }, []);
+
   return (
     <EventContext.Provider
       value={{
