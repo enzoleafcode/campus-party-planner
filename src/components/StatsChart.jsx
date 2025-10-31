@@ -6,7 +6,6 @@ function StatsChart() {
     const { events, likedEvents } = useEventContext()
     // Calcul des stats
     
-    const likedEventId = ["2","8","12","9","14","1","6"];
     const categoryCounts = events.reduce((acc, event) => {
         acc[event.category] = (acc[event.category] || 0) + 1;
         return acc;
@@ -14,17 +13,15 @@ function StatsChart() {
 
     const eventsLiked = [];
     for (let i = 0; i < events.length; i++) {
-        if (likedEventId.includes(events[i].id)){
+        if (likedEvents.includes(events[i].id)){
             eventsLiked.push(events[i])
         }
     }
-    console.log(eventsLiked);
     
     const categoryLikes = eventsLiked.reduce((acc, eventLiked) => {
         acc[eventLiked.category] = (acc[eventLiked.category] || 0) + 1;
         return acc;
     }, {});
-    console.log(categoryLikes);
     
     const data = {
         labels: ["Soirée","Concert","Festival","Open Air"],
