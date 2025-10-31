@@ -1,0 +1,14 @@
+/* event-list.css */
+.event-list--empty {
+  text-align: center;
+  padding: var(--space-4);
+  color: var(--muted);
+  font-size: var(--fs-2);
+}
+
+.MuiGrid-item {
+  display: flex;
+}
+.MuiGrid-item > .event-card {
+  flex: 1;
+}

@@ -50,11 +50,12 @@ const EventProvider = ({ children }) => {
   }, [likedEvents]);
 
   useEffect(() => {
-    if (selectedCity) {
+    refreshEvents(selectedCity);}, [selectedCity]);
+  
+    useEffect(() => {
+      fetchCities().then((data) => setCities(data));
       refreshEvents(selectedCity);
-    }
-  }, [selectedCity]);
-
+    }, []);
   return (
     <EventContext.Provider
       value={{
