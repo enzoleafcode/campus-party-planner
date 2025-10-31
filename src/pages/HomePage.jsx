@@ -1,7 +1,7 @@
 import CitySelector from "../components/CitySelector";
 import EventList from "../components/EventList";
 import { Link } from "react-router-dom";
-import "../styles/components/home.css";
+import "../styles/pages/home-page.css";
 import "../styles/components/event-list.css";
 
 function HomePage() {
