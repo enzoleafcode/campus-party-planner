@@ -31,14 +31,13 @@ function StatsChart() {
             {
                 label: 'Nombre d\'événements',
                 data: Object.values(categoryCounts),
+                color: '#fff',
                 backgroundColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 206, 86)',
+                    'rgb(87, 202, 131)',
                 ],
-                borderColor: '#fff',
-                borderWidth: 0,
             }
         ]
     };
@@ -49,14 +48,15 @@ function StatsChart() {
             {
                 label: 'Nombre d\'événements likés',
                 data: Object.values(categoryLikes),
-
+                color: '#fff',
                 backgroundColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 206, 86)',
+                    'rgb(87, 202, 131)',
                 ],
-                borderColor: '#fff',
+                hoverOffset: 20,
+                borderColor: 'var(--bg-elev, #fff);',
                 borderWidth: 2,
             }
         ]
@@ -65,11 +65,11 @@ function StatsChart() {
     return (
         <>
             <Grid container spacing={4} sx={{ justifyContent: "space-evenly", alignItems: "center", }}>
-                <Grid className='chart__background' size={{ lg: 6, sm:8, xs: 12 }} display="flex" justifyContent="center">
-                    <Bar className='chart' data={data} />
+                <Grid className='chart__background' size={{ lg: 6, sm: 8, xs: 12 }} display="flex" justifyContent="center">
+                    <Bar className='chart' data={data} options={{plugins:{legend:{labels:{color:"white",},},},scales:{y:{ticks:{color:"white",},},x:{ticks:{color:"white",},},},}} />
                 </Grid>
-                <Grid className='chart__background' size={{ lg: 6, sm:8, xs: 12 }} display="flex" justifyContent="center">
-                    <Doughnut className='chart' data={dataLike} />
+                <Grid className='chart__background' size={{ lg: 6, sm: 8, xs: 12 }} display="flex" justifyContent="center">
+                    <Doughnut className='chart' data={dataLike} options={{plugins:{legend:{labels:{color:"white",},},},}} />
                 </Grid>
             </Grid>
         </>
