@@ -2,6 +2,7 @@ import { Bar, Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Legend, Tooltip, ArcElement } from 'chart.js';
 import { useEventContext } from '../context/EventContext';
 import "../styles/components/stats-chart.css"
+import { Grid } from '@mui/material';
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, ArcElement, Tooltip, Legend);
 function StatsChart() {
     const { events, likedEvents } = useEventContext()
@@ -63,10 +64,14 @@ function StatsChart() {
 
     return (
         <>
-            <div className='chart'>
-                <Bar className='chart__bar' data={data} />
-                <Doughnut className='chart__rad' data={dataLike} />
-            </div>
+            <Grid container spacing={4} sx={{ justifyContent: "space-evenly", alignItems: "center", }}>
+                <Grid className='chart__background' size={{ lg: 6, sm:8, xs: 12 }} display="flex" justifyContent="center">
+                    <Bar className='chart' data={data} />
+                </Grid>
+                <Grid className='chart__background' size={{ lg: 6, sm:8, xs: 12 }} display="flex" justifyContent="center">
+                    <Doughnut className='chart' data={dataLike} />
+                </Grid>
+            </Grid>
         </>
     )
 
