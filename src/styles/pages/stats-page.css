@@ -1,0 +1,9 @@
+.text--primary {
+    color: white;
+    text-decoration: none;
+}
+
+.text--primary:hover {
+    color: white;
+    text-decoration: underline;
+}

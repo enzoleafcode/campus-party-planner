@@ -2,12 +2,12 @@
     --chart-background : #ffffff;
 }
 
-.chart__bar{
-    background-color: var(--chart-background);
-    border-radius: 20px;
+
+.chart{
+    margin: 20px;
 }
 
-.chart__rad{
+.chart__background{
     background-color: var(--chart-background);
-    border-radius: 20px;
+    border-radius: 15px;
 }
