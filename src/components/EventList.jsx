@@ -1,5 +1,6 @@
 import EventCard from "../components/EventCard";
 import { useEventContext } from "../context/EventContext";
+import {Grid} from "@mui/material";
 
 function EventList() {
   const { events } = useEventContext();
@@ -9,11 +10,13 @@ function EventList() {
   }
 
   return (
-    <div className="event-list">
+    <Grid container spacing={2}>
       {events.map((event) => (
-        <EventCard key={event.id} event={event} />
+        <Grid key={event.id} size={{ lg: 3, md: 4, sm: 6, xs: 12 }}>
+          <EventCard key={event.id} event={event} />
+        </Grid>
       ))}
-    </div>
+    </Grid>
   );
 }
 

@@ -1,18 +1,29 @@
 import CitySelector from "../components/CitySelector";
 import EventList from "../components/EventList";
 import { Link } from "react-router-dom";
-import EventCard from "../components/EventCard";
+import "../styles/components/home.css";
 
 function HomePage() {
   return (
     <>
-      <header className="app-header">
-        <h1>Campus Party Planner</h1>
-        <CitySelector />
-        <EventCard/>
+      <header className="app-header" role="banner">
+        <div className="container header-inner">
+          <h1 className="brand">Campus Party Planner</h1>
+          <div className="header-actions">
+            <CitySelector />
+            <Link className="btn btn--primary" to="/stats" aria-label="Voir les statistiques">
+              Voir les stats
+            </Link>
+          </div>
+
+        </div>
       </header>
-      <EventList/>
-      <Link to="/stats">Voir les stats</Link>
+
+      <main className="app-main" role="main">
+        <section className="container">
+          <EventList />
+        </section>
+      </main>
     </>
   );
 }
