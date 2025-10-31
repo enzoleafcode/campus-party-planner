@@ -1,53 +1,75 @@
 /* event-card.css */
 .event-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
-  background-color: white;
+  background: var(--bg-elev);
+  box-shadow: var(--shadow-1);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  height: 100%;
 }
 
 .event-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-2);
+  border-color: color-mix(in oklab, var(--brand) 25%, var(--border));
 }
 
 .event-card__image {
   width: 100%;
-  height: 200px;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .event-card__body {
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  padding: var(--space-2);
 }
 
 .event-card__title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  color: #333;
+  font-size: 1.1rem;
+  font-weight: 750;
+  margin: 0 0 0.35rem;
+  color: inherit;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  min-height: 2.4em;
 }
 
 .event-card__info {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 0.25rem;
+  font-size: var(--fs-0);
+  color: var(--muted);
+  margin: 0.15rem 0;
+  flex-grow: 1;
 }
 
 .event-card__like-btn {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
+  align-self: flex-start;
+  appearance: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.95rem;
   cursor: pointer;
-  margin-top: 0.5rem;
-  transition: transform 0.2s;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
 
 .event-card__like-btn:hover {
-  transform: scale(1.2);
+  transform: translateY(-1px);
+  border-color: color-mix(in oklab, var(--brand) 35%, var(--border));
+  box-shadow: var(--shadow-1);
+  background: color-mix(in oklab, var(--brand) 8%, var(--bg-elev));
 }
 
 .event-card__like-btn--liked {
-  color: red;
+  color: #ef4444;
+  border-color: #ef4444;
+  background: color-mix(in oklab, #ef4444 12%, var(--bg-elev));
 }
