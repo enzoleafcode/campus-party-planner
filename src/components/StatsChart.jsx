@@ -17,13 +17,11 @@ function StatsChart() {
             eventsLiked.push(events[i])
         }
     }
-    console.log(eventsLiked);
     
     const categoryLikes = eventsLiked.reduce((acc, eventLiked) => {
         acc[eventLiked.category] = (acc[eventLiked.category] || 0) + 1;
         return acc;
     }, {});
-    console.log(categoryLikes);
     
     const data = {
         labels: ["Soirée","Concert","Festival","Open Air"],
