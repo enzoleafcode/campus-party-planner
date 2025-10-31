@@ -1,0 +1,13 @@
+:root{
+    --chart-background : #ffffff;
+}
+
+.chart__bar{
+    background-color: var(--chart-background);
+    border-radius: 20px;
+}
+
+.chart__rad{
+    background-color: var(--chart-background);
+    border-radius: 20px;
+}
