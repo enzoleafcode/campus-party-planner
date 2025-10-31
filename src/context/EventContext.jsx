@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { fetchEvents } from "../services/api";
+import { fetchCities, fetchEvents } from "../services/api";
 
 const EventContext = createContext();
 
@@ -10,6 +10,7 @@ export const useEventContext = () => {
 const EventProvider = ({ children }) => {
   const [events, setEvents] = useState([]);
   const [selectedCity, setSelectedCity] = useState("");
+  const [cities, setCities] = useState([]);
   const [likedEvents, setLikedEvents] = useState(() => {
     try {
       const saved = localStorage.getItem("likedEvents");
@@ -50,12 +51,13 @@ const EventProvider = ({ children }) => {
   }, [likedEvents]);
 
   useEffect(() => {
-    refreshEvents(selectedCity);}, [selectedCity]);
-  
-    useEffect(() => {
-      fetchCities().then((data) => setCities(data));
-      refreshEvents(selectedCity);
-    }, []);
+  refreshEvents(selectedCity);}, [selectedCity]);
+
+  useEffect(() => {
+    fetchCities().then((data) => setCities(data));
+    refreshEvents(selectedCity);
+  }, []);
+
   return (
     <EventContext.Provider
       value={{
@@ -66,6 +68,7 @@ const EventProvider = ({ children }) => {
         refreshEvents,
         likedEvents,
         toggleLike,
+        cities,
       }}
     >
       {children}
